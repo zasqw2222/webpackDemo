@@ -1,28 +1,27 @@
 /**
- * App组件 负责总入口
+ * App组件
  * */
 import React from 'react';
-import { connect } from 'react-redux'
+import Headers from './components/Header/Header';
+import Sidebar from './components/Sidebar/Sidebar';
 
-class App extends React.Component {
-    componentDidMount() {
 
-    }
+export default class App extends React.Component {
+
     render() {
+        console.log(this.props)
         return (
             <div>
-                <div className="content">
-                    {this.props.children}
+                <Headers/>
+                <div>
+                    <Sidebar/>
+                    <div className="content">
+                        {this.props.children}
+                    </div>
+
                 </div>
 
-                没有children
             </div>
         )
     }
 }
-
-function select(state) {
-    return state;
-}
-
-export default connect(select)(App)
