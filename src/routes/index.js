@@ -7,13 +7,13 @@ const rootRouters = [{
   indexRoute: {
     getComponents(location, callback) {
       require.ensure([], function (require) {
-        callback(null, require('../components/Home/index').default)
+        callback(null, require('../components/Home').default)
       })
     }
   },
   childRoutes: [
-    // require('./OrganizationalStructure'),
-    // require('./DepartmentDetail')
+    require('./M1'),
+    require('./M2')
   ]
 }];
 

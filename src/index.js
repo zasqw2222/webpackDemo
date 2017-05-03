@@ -1,25 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-import {render} from 'react-dom'
-
-import { createStore, applyMiddleware } from 'redux'
-
-import { Provider } from 'react-redux'
+import {render} from 'react-dom';
 
 import {Router, browserHistory} from 'react-router'
-
-import thunk from 'redux-thunk'
+import './css/antd.min.css'
 
 import rootRouters from './routes'
 
-import reducer from './reducers'
-
-
-let store = createStore(reducer, applyMiddleware(thunk))
-
-render((
-    <Provider store={store}>
-        <Router history={browserHistory} routes={rootRouters}/>
-    </Provider>), 
-    document.getElementById('app')
-)
+render((<Router history={browserHistory} routes={rootRouters}/>), document.getElementById('app'))
