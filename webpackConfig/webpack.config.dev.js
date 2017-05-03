@@ -59,5 +59,8 @@ module.exports = {
       }
     ]
   },
-  plugins: [new htmlPlugin({ title: 'app', inject: 'body', template: './src/tpl.html' })]
+  plugins: [
+    new htmlPlugin({ title: 'app', inject: 'body', template: './src/tpl.html' }),
+    new webpack.HotModuleReplacementPlugin()
+  ]
 }
